@@ -13,7 +13,7 @@ avvia.addEventListener('click', function () {
     if (isNaN(parseInt(arrayInput)) || isNaN(parseInt(selectionInput))) {
         console.log(`inserire solo numeri`);
     }
-    else if (arrayInput < selectionInput) {
+    else if (parseInt(arrayInput) < parseInt(selectionInput)) {
         console.log(`inserire un numero di lementi da selezionare minore del numero di elementi generati`);
     }
     else {
@@ -25,9 +25,10 @@ avvia.addEventListener('click', function () {
             selectionList.push(numberList[numberList.length - c]);
         }
     }
-
+    
     console.log(numberList);
     console.log(selectionList);
+    document.getElementById('stamp').innerHTML = `${selectionList}`
 })
 
 
