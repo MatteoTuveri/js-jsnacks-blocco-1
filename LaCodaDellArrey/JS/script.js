@@ -10,12 +10,20 @@ avvia.addEventListener('click', function () {
     const numberList = [];
     const selectionList = [];
 
-    for (let i = 1; i <= parseInt(arrayInput); i++) {
-        numberList.push(getRndInteger(1, 100));
+    if (arrayInput < selectionInput) {
+        console.log(`inserire un numero di lementi da selezionare minore del numero di elementi generati`);
     }
+    else if (isNaN(parseInt(arrayInput)) || isNaN(parseInt(selectionInput))) {
+        console.log(`inserire solo numeri`);
+    }
+    else {
+        for (let i = 1; i <= parseInt(arrayInput); i++) {
+            numberList.push(getRndInteger(1, 100));
+        }
 
-    for (let c = 1; c <= parseInt(selectionInput); c++) {
-        selectionList.push(numberList[numberList.length - c]);
+        for (let c = 1; c <= parseInt(selectionInput); c++) {
+            selectionList.push(numberList[numberList.length - c]);
+        }
     }
 
     console.log(numberList);
