@@ -3,29 +3,25 @@ Stampiamo poi gli ultimi 5 elementi dell'Array
 Bonus:
 Chiediamo all'utente quanti elementi dell'array dovremo stampare */
 
-let arrayInput = document.getElementById('array').value;
-let selectionInput = document.getElementById('selection').value;
-
- let avvia = document.querySelector('.btn');
-const numberList = [];
-const selectionList = [];
-
+let avvia = document.querySelector('.btn');
 avvia.addEventListener('click', function () {
-    console.log(arrayInput);
-    console.log(selectionInput);
-/* 
-    for (let i = 0; i <= parseInt(arrayNumber); i++) {
+    let arrayInput = document.getElementById('array').value;
+    let selectionInput = document.getElementById('selection').value;
+    const numberList = [];
+    const selectionList = [];
+
+    for (let i = 1; i <= parseInt(arrayInput); i++) {
         numberList.push(getRndInteger(1, 100));
     }
 
-    for (let c = 0; c <= parseInt(selectionNumber); c++) {
+    for (let c = 1; c <= parseInt(selectionInput); c++) {
         selectionList.push(numberList[numberList.length - c]);
     }
 
     console.log(numberList);
-    console.log(selectionList); */
+    console.log(selectionList);
 })
- 
+
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
